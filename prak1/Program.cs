@@ -17,13 +17,13 @@ namespace prak1
       }
       public override string ToString()
       {
-        return firstName + " " + lastName + " (" + gender + "), age " + age;
+        return firstName + " " + lastName + " (" + gender + "), Годиков " + age;
       }
       public enum Genders : int { Male, Female };
     }
       static void Main(string[] args)
       {
-        Person p = new Person("Tony", "Allen", 32, Person.Genders.Male);
+        Person p = new Person("Анисимов", "Егорка", 19, Person.Genders.Male);
         Console.WriteLine(p.ToString());
       }
   }
