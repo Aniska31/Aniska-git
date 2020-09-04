@@ -16,12 +16,12 @@ namespace prak1
       }
       public override string ToString()
       {
-        return firstName + " " + lastName + ", age " + age;
+        return firstName + " " + lastName + ", Годиков " + age;
       }
     }
     static void Main(string[] args)
     {
-        Person p = new Person("Tony", "Allen", 32); Console.WriteLine(p);
+        Person p = new Person("Анисимов", "Егор", 19); Console.WriteLine(p);
       }
   }
 }
