@@ -1,12 +1,17 @@
-﻿using System;
-
-namespace prak4_2
+﻿//Создание и использование очереди
+using System;
+using System.Collections;
+class Program
 {
-  class Program
+  static void Main(string[] args)
   {
-    static void Main(string[] args)
+    Queue queue = new Queue();
+    queue.Enqueue("First"); queue.Enqueue("Second");
+    queue.Enqueue("Third"); queue.Enqueue("Fourth");
+  while (queue.Count > 0)
     {
-      Console.WriteLine("Hello World!");
+      object obj = queue.Dequeue();
+      Console.WriteLine("From Queue: {0}", obj);
     }
   }
 }
