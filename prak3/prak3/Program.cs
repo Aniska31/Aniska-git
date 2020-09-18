@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace prak2_2
+namespace prak3
 {
   class Program
   {
