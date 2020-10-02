@@ -57,11 +57,27 @@ namespace Serialize_People
         // Закрываем файл fs.Close();
         fs.Close();
       }
+
+      private static Person Deserialize()
+      {
+        Person dsp = new Person();
+      // Открываем файл для чтения данных	
+      FileStream fs = new FileStream("Person.Dat", FileMode.Open);
+      // Создаем объект BinaryFormatter для выполнения десериализации
+      BinaryFormatter bf = new BinaryFormatter();
+      // Используем объект BinaryFormatter для десериализации данных из файла
+      dsp = (Person) bf.Deserialize(fs);
+        // Закрываем файл fs.Close();
+        fs.Close();
+
+        return dsp;
     }
 
-    static void Main(string[] args)
+  }
+
+  static void Main(string[] args)
     {
-      Console.WriteLine("Пример серилизации №2");
+      Console.WriteLine("Пример серилизации №3");
     }
   }
 }
