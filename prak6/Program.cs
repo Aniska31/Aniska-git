@@ -151,9 +151,13 @@ namespace prak6
         get
         {
           int sum=0;
-          for (int i = 0; i < session.Length; i++)
-            sum = sum + session.mark[i];
-          return (double)sum / (double)session.Length;
+          int flag = 0;
+          foreach(Exam _session in session)
+          {
+            sum = sum + _session.Mark;
+            flag++;
+          }
+          return (double)sum / (double)flag;
         }
       }
 
