@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace Serialize_People
 {
@@ -49,29 +50,36 @@ namespace Serialize_People
       private static void Serialize(Person sp)
       {
         // Создаем файл для сохранения данных
-        FileStream fs = new FileStream("Person.Dat", FileMode.Create);
-        // Создаем объект BinaryFormatter для выполнения сериализации BinaryFormatter bf = new BinaryFormatter();
-        BinaryFormatter bf = new BinaryFormatter();
-        // Используем объект BinaryFormatter для сериализации данных в файл bf.Serialize(fs, sp);
-        bf.Serialize(fs, sp);
-        // Закрываем файл fs.Close();
+        FileStream fs = new FileStream("Person.XML", FileMode.Create);
+
+        // Создаем объект XmlSerializer для выполнения сериализации 
+        XmlSerializer xs = new XmlSerializer(typeof(Person));
+
+        // Используем объект XmlSerializer для сериализации данных в файл
+        xs.Serialize(fs, sp);
+
+        // Закрываем файл
         fs.Close();
       }
+
 
       private static Person Deserialize()
       {
         Person dsp = new Person();
-        // Открываем файл для чтения данных	
-        FileStream fs = new FileStream("Person.Dat", FileMode.Open);
-        // Создаем объект BinaryFormatter для выполнения десериализации
-        BinaryFormatter bf = new BinaryFormatter();
-        // Используем объект BinaryFormatter для десериализации данных из файла
-        dsp = (Person)bf.Deserialize(fs);
-        // Закрываем файл fs.Close();
-        fs.Close();
 
+        // Создаем файл для сохранения данных
+        FileStream fs = new FileStream("Person.XML", FileMode.Open);
+
+        // Создаем объект XmlSerializer для выполнения десериализации
+        XmlSerializer xs = new XmlSerializer(typeof(Person));
+        // Используем объект XmlSerializer для десериализации данных в файл
+        dsp = (Person)xs.Deserialize(fs);
+
+        // Закрываем файл fs.Close(); return dsp;
+        fs.Close();
         return dsp;
       }
+
 
       void IDeserializationCallback.OnDeserialization(Object sender)
       {
@@ -83,7 +91,7 @@ namespace Serialize_People
 
     static void Main(string[] args)
     {
-      Console.WriteLine("Пример серилизации №4");
+      Console.WriteLine("Пример серилизации №5");
     }
   }
 }
