@@ -51,9 +51,11 @@ namespace Serialize_People
         // Создаем файл для сохранения данных
         FileStream fs = new FileStream("Person.Dat", FileMode.Create);
         // Создаем объект BinaryFormatter для выполнения сериализации BinaryFormatter bf = new BinaryFormatter();
-
+        BinaryFormatter bf = new BinaryFormatter();
         // Используем объект BinaryFormatter для сериализации данных в файл bf.Serialize(fs, sp);
+        bf.Serialize(fs, sp);
         // Закрываем файл fs.Close();
+        fs.Close();
       }
 
     }
