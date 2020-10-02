@@ -8,11 +8,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Serialize_People
 {
-  class Program
+    class Program
   {
 
     [Serializable()]
-    class Person
+    class Person : IDeserializationCallback
     {
       public string name;
       public DateTime dateOfBirth;
@@ -73,11 +73,17 @@ namespace Serialize_People
         return dsp;
       }
 
-    }
+      void IDeserializationCallback.OnDeserialization(Object sender)
+      {
+        // После десериализации вычисляем возраст 
+        CalculateAge();
+      }
 
-    static void Main(string[] args)
+      }
+
+      static void Main(string[] args)
     {
-      Console.WriteLine("Пример серилизации №3");
+      Console.WriteLine("Пример серилизации №4");
     }
   }
 }
