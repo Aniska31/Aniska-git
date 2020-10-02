@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Serialize_People
 {
@@ -43,6 +45,17 @@ namespace Serialize_People
           age--;
         }
       }
+
+      private static void Serialize(Person sp)
+      {
+        // Создаем файл для сохранения данных
+        FileStream fs = new FileStream("Person.Dat", FileMode.Create);
+        // Создаем объект BinaryFormatter для выполнения сериализации BinaryFormatter bf = new BinaryFormatter();
+
+        // Используем объект BinaryFormatter для сериализации данных в файл bf.Serialize(fs, sp);
+        // Закрываем файл fs.Close();
+      }
+
     }
 
     static void Main(string[] args)
