@@ -57,12 +57,11 @@ namespace Serialize_People
         // Закрываем файл fs.Close();
         fs.Close();
       }
-
     }
 
     static void Main(string[] args)
     {
-      Console.WriteLine("Пример серилизации");
+      Console.WriteLine("Пример серилизации №2");
     }
   }
 }
