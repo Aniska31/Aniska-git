@@ -16,7 +16,7 @@ namespace Serialize_People
     {
       public string name;
       public DateTime dateOfBirth;
-      public int age;
+      [NonSerialized] public int age;
 
       public Person(string _name, DateTime _dateOfBirth)
       {
