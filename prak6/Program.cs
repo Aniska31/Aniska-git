@@ -1,5 +1,6 @@
 ﻿// 549 mod 3=0; 0+1=1 variant
 using System;
+using System.Linq;
 
 namespace prak6
 {
@@ -144,6 +145,18 @@ namespace prak6
         get { return session; }
         set { session = value; }
       }
+
+      public double Average
+      {
+        get
+        {
+          int sum=0;
+          for (int i = 0; i < session.Length; i++)
+            sum = sum + session.mark[i];
+          return (double)sum / (double)session.Length;
+        }
+      }
+
 
 
     }
