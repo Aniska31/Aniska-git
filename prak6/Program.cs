@@ -213,7 +213,8 @@ namespace prak6
      
     static void Main(string[] args)
     {
-      Console.WriteLine("Hello World!");
+        Student I = new Student();
+        I.ToShortString();
     }
   }
 }
