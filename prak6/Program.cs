@@ -192,6 +192,19 @@ namespace prak6
                 session.Add(_elem);
     }
 
+    public override string ToString()
+    {
+        string str = "";
+        int i = 0;
+        foreach (Exam _exam in Session)
+        {
+            i++;
+            str = str + i + ". " + _exam.ToString() + "\n";
+        }
+        return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + str;
+    }
+
+
 
     }
 
