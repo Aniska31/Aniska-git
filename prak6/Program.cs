@@ -114,7 +114,7 @@ namespace prak6
       private Person chel; // данные студента
       private Education diplom; // уровень образования
       private int group;
-      private Exam[] session; // данные об экзаменах
+      private List<Exam> session; // данные об экзаменах
 
       public Student() : this(new Person("Egor", "Anisimov", new DateTime(20, 11, 2000)), Education.Вachelor, 5) { }
 
@@ -143,11 +143,18 @@ namespace prak6
         set { group = value; }
       }
 
-      public Exam[] Session
+      public List <Exam> Session
       {
         get { return session; }
-        set { session = value; }
-      }
+                set
+                {
+                    int i = 0;
+                    foreach (Exam _exam in value)
+                    {
+                        session[i++] = _exam;
+                    }
+                }
+       }
 
       public double Average
       {
@@ -180,9 +187,11 @@ namespace prak6
       }
 
     public void AddExams (params Exam[] _session)
-        {
-                
-        }
+    {
+            foreach (Exam _elem in _session)
+                session.Add(_elem);
+    }
+
 
     }
 
