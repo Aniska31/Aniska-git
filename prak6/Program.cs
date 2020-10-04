@@ -204,8 +204,10 @@ namespace prak6
         return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + str;
     }
 
-
-
+    public virtual string ToShortString()
+    {
+        return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + "middle mark: " + Average;
+    }
     }
 
      
