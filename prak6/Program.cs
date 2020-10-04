@@ -1,6 +1,9 @@
 ﻿// 549 mod 3=0; 0+1=1 variant
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace prak6
 {
@@ -161,7 +164,25 @@ namespace prak6
         }
       }
 
+     public bool this [Education _diplom]
+      {
+        get
+        {
+            bool check;
+            if (_diplom == diplom)
+                check = true;
+            else
+                check = false;
+            return check;
 
+
+        }
+      }
+
+    public void AddExams (params Exam[] _session)
+        {
+                
+        }
 
     }
 
