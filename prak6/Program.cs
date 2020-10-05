@@ -207,7 +207,7 @@ namespace prak6
                 i++;
                 str = str + i + ". " + _exam.ToString() + "\n";
             }
-            return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + str;
+            return (chel.ToString() + "  " + Diplom + "  " + Group + "  "+ str);
         }
 
         public virtual string ToShortString()
@@ -223,10 +223,23 @@ namespace prak6
         Student I = new Student();
         //I.ToShortString();
         Console.WriteLine(I.ToShortString());
+        Console.WriteLine("\n");
+
         //I.Education.Specialist;
         Console.WriteLine(I[Education.Specialist]);
         Console.WriteLine(I[Education.Bachelor]);
         Console.WriteLine(I[Education.SecondEducation]);
+        Console.WriteLine("\n");
+
+        //I.ToString();
+        I.Chel.Name = "Egorsha";
+        I.Chel.Fam = "Aniska";
+        I.Chel.Birth = new DateTime(2020, 10, 01);
+        I.Diplom =(Education) 1;
+        I.Group = 55;
+        Console.WriteLine(I.ToString());
+        Console.WriteLine("\n");
+
         }
     }
 }
