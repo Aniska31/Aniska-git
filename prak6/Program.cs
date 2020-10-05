@@ -111,108 +111,109 @@ namespace prak6
 
     class Student
     {
-      private Person chel; // данные студента
-      private Education diplom; // уровень образования
-      private int group;
-      private List<Exam> session; // данные об экзаменах
+          private Person chel; // данные студента
+          private Education diplom; // уровень образования
+          private int group;
+          private List<Exam> session = new List<Exam>(); // данные об экзаменах
 
-      public Student()
-    {
-        chel = new Person();
-        diplom = (Education) 1;
-        group = 5;
-    }
-
-      public Student(Person _chel, Education _diplom, int _group)
-      {
-        chel = _chel;
-        diplom = _diplom;
-        group = _group;
-      }
-
-      public Person Chel
-      {
-        get { return chel; }
-        set { chel = value; }
-      }
-
-      public Education Diplom
-      {
-        get { return diplom; }
-        set { diplom = value; }
-      }
-
-      public int Group
-      {
-        get { return group; }
-        set { group = value; }
-      }
-
-      public List <Exam> Session
-      {
-        get { return session; }
-                set
-                {
-                    int i = 0;
-                    foreach (Exam _exam in value)
-                    {
-                        session[i++] = _exam;
-                    }
-                }
-       }
-
-      public double Average
-      {
-        get
+          public Student()
         {
-          int sum=0;
-          int flag = 0;
-          foreach(Exam _session in session)
+            chel = new Person();
+            diplom = (Education) 1;
+            group = 5;
+        }
+
+          public Student(Person _chel, Education _diplom, int _group)
           {
-            sum = sum + _session.Mark;
-            flag++;
+            chel = _chel;
+            diplom = _diplom;
+            group = _group;
           }
-          return (double)sum / (double)flag;
-        }
-      }
 
-     public bool this [Education _diplom]
-      {
-        get
+          public Person Chel
+          {
+            get { return chel; }
+            set { chel = value; }
+          }
+
+          public Education Diplom
+          {
+            get { return diplom; }
+            set { diplom = value; }
+          }
+
+          public int Group
+          {
+            get { return group; }
+            set { group = value; }
+          }
+
+          public List <Exam> Session
+          {
+            get { return session; }
+                    set
+                    {
+                        int i = 0;
+                        foreach (Exam _exam in value)
+                        {
+                            session[i++] = _exam;
+                        }
+                    }
+           }
+
+          public double Average
+          {
+            get
+            {
+              int sum=0;
+              int flag = 0;
+              foreach(Exam _session in session)
+              {
+                sum = sum + _session.Mark;
+                flag++;
+              }
+              return (double)sum / (double)flag;
+            }
+          }
+
+         public bool this [Education _diplom]
+          {
+            get
+            {
+                bool check;
+                if (_diplom == diplom)
+                    check = true;
+                else
+                    check = false;
+                return check;
+
+
+            }
+          }
+
+        public void AddExams (params Exam[] _session)
         {
-            bool check;
-            if (_diplom == diplom)
-                check = true;
-            else
-                check = false;
-            return check;
-
-
+                foreach (Exam _elem in _session)
+                    session.Add(_elem);
         }
-      }
 
-    public void AddExams (params Exam[] _session)
-    {
-            foreach (Exam _elem in _session)
-                session.Add(_elem);
-    }
-
-    public override string ToString()
-    {
-        string str = "";
-        int i = 0;
-        foreach (Exam _exam in Session)
+        public override string ToString()
         {
-            i++;
-            str = str + i + ". " + _exam.ToString() + "\n";
+            string str = "";
+            int i = 0;
+            foreach (Exam _exam in Session)
+            {
+                i++;
+                str = str + i + ". " + _exam.ToString() + "\n";
+            }
+            return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + str;
         }
-        return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + str;
-    }
 
-    public virtual string ToShortString()
-    {
-        return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + "middle mark: " + Average;
-    }
+        public virtual string ToShortString()
+        {
+            return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + "middle mark: " + Average;
+        }
+
     }
 
      
