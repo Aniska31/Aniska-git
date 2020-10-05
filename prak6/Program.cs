@@ -26,7 +26,7 @@ namespace prak6
       {
         name = "Egor";
         fam = "Anisimov";
-        birth = new DateTime(20, 11, 2000);
+        birth = new DateTime(2000, 11, 20);
       }
 
       public Person(string _name, string _fam, System.DateTime _birth)
