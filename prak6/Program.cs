@@ -172,7 +172,10 @@ namespace prak6
                 sum = sum + _session.Mark;
                 flag++;
               }
-              return (double)sum / (double)flag;
+                    if (sum == 0)
+                        return 0;
+                    else
+                        return (double)sum / (double)flag;
             }
           }
 
@@ -211,7 +214,7 @@ namespace prak6
 
         public virtual string ToShortString()
         {
-            return chel.ToString() + "\n" + Diplom + "\n" + Group + "\n" + "middle mark: " + Average;
+            return (chel.ToString() +"  "+ Diplom  + "  " + Group + "  " + Average);
         }
 
     }
@@ -220,7 +223,9 @@ namespace prak6
     static void Main(string[] args)
     {
         Student I = new Student();
-        I.ToShortString();
+        //I.ToShortString();
+            Console.WriteLine(I.ToShortString());
+
 
     }
   }
