@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using Microsoft.VisualBasic.FileIO;
 
 namespace prak6
 {
@@ -222,37 +224,69 @@ namespace prak6
     {
         Student I = new Student();
 
-            /*//I.ToShortString();
-            Console.WriteLine(I.ToShortString());
-            Console.WriteLine("\n");
+        /*//1 I.ToShortString();
+        Console.WriteLine(I.ToShortString());
+        Console.WriteLine("\n");
 
-            //I.Education.Specialist;
-            Console.WriteLine(I[Education.Specialist]);
-            Console.WriteLine(I[Education.Bachelor]);
-            Console.WriteLine(I[Education.SecondEducation]);
-            Console.WriteLine("\n");
+        //2 I.Education.Specialist;
+        Console.WriteLine(I[Education.Specialist]);
+        Console.WriteLine(I[Education.Bachelor]);
+        Console.WriteLine(I[Education.SecondEducation]);
+        Console.WriteLine("\n");
 
-            //I.ToString();
-            I.Chel.Name = "Egorsha";
-            I.Chel.Fam = "Aniska";
-            I.Chel.Birth = new DateTime(2020, 10, 01);
-            I.Diplom =(Education) 0;
-            I.Group = 55;
-            Console.WriteLine(I.ToString());
-            Console.WriteLine("\n");*/
-
-            //AddExams( params Exam[] )
-            //I.AddExams();
-        for(int i=0;i<3;i++)
-        {
-                Exam _exam = new Exam();
-                I.AddExams(_exam);
-        }
+        //3 I.ToString();
+        I.Chel.Name = "Egorsha";
+        I.Chel.Fam = "Aniska";
+        I.Chel.Birth = new DateTime(2020, 10, 01);
+        I.Diplom =(Education) 0;
+        I.Group = 55;
         Console.WriteLine(I.ToString());
         Console.WriteLine("\n");
 
+        //4 AddExams( params Exam[] )
+        //I.AddExams();
+        for(int i=0;i<3;i++)
+        {
+            Exam _exam = new Exam();
+            I.AddExams(_exam);
+        }
+        Console.WriteLine(I.ToString());
+         Console.WriteLine("\n");*/
 
-
+        //5 массивы
+        var one_n = new Exam[100];
+        var m_n = new Exam[10,10];
+        var stairs = new Exam[4][];
+        //test one_n
+        var sw = Stopwatch.StartNew();
+        for (int i = 0; i < 100; i++)
+            one_n[i] = new Exam();
+        sw.Stop();
+        Console.WriteLine(sw.Elapsed);
+        //test m_n
+        sw = Stopwatch.StartNew();
+        for (int i = 0; i < 10; i++)
+            for (int j = 0; j < 10; j++)
+                m_n[i, j] = new Exam();
+        sw.Stop();
+        Console.WriteLine(sw.Elapsed);
+        //test stairs
+        sw = Stopwatch.StartNew();
+        stairs[0] = new Exam[10];
+        stairs[1] = new Exam[30];
+        stairs[2] = new Exam[20];
+        stairs[3] = new Exam[40];
+        for (int i = 0; i < 10; i++)
+            stairs[0][i] = new Exam();
+        for (int i = 0; i < 30; i++)
+            stairs[1][i] = new Exam();
+        for (int i = 0; i < 20; i++)
+            stairs[2][i] = new Exam();
+        for (int i = 0; i < 40; i++)
+            stairs[3][i] = new Exam();
+        sw.Stop();
+        Console.WriteLine(sw.Elapsed);
+        Console.ReadKey();
         }
     }
 }
