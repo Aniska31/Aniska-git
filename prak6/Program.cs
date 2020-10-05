@@ -12,7 +12,7 @@ namespace prak6
     public enum Education : int
     {
       Specialist,
-      Вachelor,
+      Bachelor,
       SecondEducation,
     }
 
@@ -189,8 +189,6 @@ namespace prak6
                 else
                     check = false;
                 return check;
-
-
             }
           }
 
@@ -224,9 +222,11 @@ namespace prak6
     {
         Student I = new Student();
         //I.ToShortString();
-            Console.WriteLine(I.ToShortString());
-
-
+        Console.WriteLine(I.ToShortString());
+        //I.Education.Specialist;
+        Console.WriteLine(I[Education.Specialist]);
+        Console.WriteLine(I[Education.Bachelor]);
+        Console.WriteLine(I[Education.SecondEducation]);
+        }
     }
-  }
 }
