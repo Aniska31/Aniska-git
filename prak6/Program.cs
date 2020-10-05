@@ -82,7 +82,7 @@ namespace prak6
       {
         subject = "Programming";
         mark = 5;
-        deadline = new DateTime(02, 10, 2020);
+        deadline = new DateTime(2020, 10, 02);
       }
 
       public override string ToString()
@@ -202,12 +202,12 @@ namespace prak6
         {
             string str = "";
             int i = 0;
-            foreach (Exam _exam in Session)
+            foreach (Exam _exam in session)
             {
                 i++;
                 str = str + i + ". " + _exam.ToString() + "\n";
             }
-            return (chel.ToString() + "  " + Diplom + "  " + Group + "  "+ str);
+            return (chel.ToString() + "  " + Diplom + "  " + Group + "\n"+ str);
         }
 
         public virtual string ToShortString()
@@ -221,24 +221,37 @@ namespace prak6
     static void Main(string[] args)
     {
         Student I = new Student();
-        //I.ToShortString();
-        Console.WriteLine(I.ToShortString());
-        Console.WriteLine("\n");
 
-        //I.Education.Specialist;
-        Console.WriteLine(I[Education.Specialist]);
-        Console.WriteLine(I[Education.Bachelor]);
-        Console.WriteLine(I[Education.SecondEducation]);
-        Console.WriteLine("\n");
+            /*//I.ToShortString();
+            Console.WriteLine(I.ToShortString());
+            Console.WriteLine("\n");
 
-        //I.ToString();
-        I.Chel.Name = "Egorsha";
-        I.Chel.Fam = "Aniska";
-        I.Chel.Birth = new DateTime(2020, 10, 01);
-        I.Diplom =(Education) 1;
-        I.Group = 55;
+            //I.Education.Specialist;
+            Console.WriteLine(I[Education.Specialist]);
+            Console.WriteLine(I[Education.Bachelor]);
+            Console.WriteLine(I[Education.SecondEducation]);
+            Console.WriteLine("\n");
+
+            //I.ToString();
+            I.Chel.Name = "Egorsha";
+            I.Chel.Fam = "Aniska";
+            I.Chel.Birth = new DateTime(2020, 10, 01);
+            I.Diplom =(Education) 0;
+            I.Group = 55;
+            Console.WriteLine(I.ToString());
+            Console.WriteLine("\n");*/
+
+            //AddExams( params Exam[] )
+            //I.AddExams();
+        for(int i=0;i<3;i++)
+        {
+                Exam _exam = new Exam();
+                I.AddExams(_exam);
+        }
         Console.WriteLine(I.ToString());
         Console.WriteLine("\n");
+
+
 
         }
     }
