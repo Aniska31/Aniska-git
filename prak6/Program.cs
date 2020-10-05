@@ -9,7 +9,7 @@ namespace prak6
 {
   class Program
   {
-    public enum Education
+    public enum Education : int
     {
       Specialist,
       Вachelor,
@@ -116,7 +116,12 @@ namespace prak6
       private int group;
       private List<Exam> session; // данные об экзаменах
 
-      public Student() : this(new Person("Egor", "Anisimov", new DateTime(20, 11, 2000)), Education.Вachelor, 5) { }
+      public Student()
+    {
+        chel = new Person();
+        diplom = (Education) 1;
+        group = 5;
+    }
 
       public Student(Person _chel, Education _diplom, int _group)
       {
@@ -215,6 +220,7 @@ namespace prak6
     {
         Student I = new Student();
         I.ToShortString();
+
     }
   }
 }
