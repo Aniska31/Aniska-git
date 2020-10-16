@@ -7,6 +7,7 @@ namespace prak7_a
     static void Main(string[] args)
     {
       Console.WriteLine("Hello World!");
+      Console.WriteLine("Hello World!");
     }
   }
 }
