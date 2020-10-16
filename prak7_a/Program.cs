@@ -8,7 +8,6 @@ namespace prak7_a
     {
       Console.WriteLine("Hello World!");
       Console.WriteLine("Hello World!");
-      Console.WriteLine("Hello World!");
     }
   }
 }
