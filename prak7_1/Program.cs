@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Рисование круговой диаграммы
+using System;
 
 namespace prak7_1
 {
