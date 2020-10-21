@@ -10,7 +10,7 @@ namespace prak8_1
     {
         static void Counting()
         {
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 Console.WriteLine("Count: {0} - Thread' {1} ", i, Thread.CurrentThread.ManagedThreadId);
                 Thread.Sleep(10);
@@ -19,7 +19,12 @@ namespace prak8_1
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ThreadStart starter = new ThreadStart(Counting);
+            Thread first = new Thread(starter);
+            Thread second = new Thread(starter);
+            first.Start(); second.Start();
+            first.Join(); second.Join();
+            Console.Read();
         }
     }
 }
