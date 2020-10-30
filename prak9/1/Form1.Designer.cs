@@ -31,8 +31,10 @@
       this.label1 = new System.Windows.Forms.Label();
       this.button1 = new System.Windows.Forms.Button();
       this.button2 = new System.Windows.Forms.Button();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.textBox2 = new System.Windows.Forms.TextBox();
+      this.OX = new System.Windows.Forms.TextBox();
+      this.OY = new System.Windows.Forms.TextBox();
+      this.label2 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // label1
@@ -67,34 +69,55 @@
       this.button2.Text = "Ни в коем случаи!";
       this.button2.UseVisualStyleBackColor = true;
       // 
-      // textBox1
+      // OX
       // 
-      this.textBox1.Location = new System.Drawing.Point(12, 33);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(41, 20);
-      this.textBox1.TabIndex = 3;
-      this.textBox1.Text = "X:";
+      this.OX.Location = new System.Drawing.Point(38, 12);
+      this.OX.Name = "OX";
+      this.OX.Size = new System.Drawing.Size(49, 20);
+      this.OX.TabIndex = 3;
       // 
-      // textBox2
+      // OY
       // 
-      this.textBox2.Location = new System.Drawing.Point(12, 70);
-      this.textBox2.Name = "textBox2";
-      this.textBox2.Size = new System.Drawing.Size(41, 20);
-      this.textBox2.TabIndex = 4;
-      this.textBox2.Text = "Y:";
+      this.OY.Location = new System.Drawing.Point(38, 49);
+      this.OY.Name = "OY";
+      this.OY.Size = new System.Drawing.Size(49, 20);
+      this.OY.TabIndex = 4;
+      this.OY.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(15, 15);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(17, 13);
+      this.label2.TabIndex = 5;
+      this.label2.Text = "X:";
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(15, 52);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(17, 13);
+      this.label3.TabIndex = 6;
+      this.label3.Text = "Y:";
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(453, 444);
-      this.Controls.Add(this.textBox2);
-      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.label2);
+      this.Controls.Add(this.OY);
+      this.Controls.Add(this.OX);
       this.Controls.Add(this.button2);
       this.Controls.Add(this.button1);
       this.Controls.Add(this.label1);
       this.Name = "Form1";
       this.Text = "Предложение, от которого нельзя отказаться";
+      this.Load += new System.EventHandler(this.Form1_Load);
+      this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -105,8 +128,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox OX;
+        private System.Windows.Forms.TextBox OY;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

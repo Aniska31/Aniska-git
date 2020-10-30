@@ -26,5 +26,23 @@ namespace _1
     {
 
     }
+
+    private void Form1_MouseMove(object sender, MouseEventArgs e)
+    {
+      // переводим координату X в строку и записывает в поля ввода
+      OX.Text = e.X.ToString();
+      // переводим координату Y в строку и записывает в поля ввода
+      OY.Text = e.Y.ToString();
+    }
+
+    private void Form1_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    private void textBox2_TextChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }
