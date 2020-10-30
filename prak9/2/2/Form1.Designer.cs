@@ -35,6 +35,7 @@
       this.изображениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.форматToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.форматPNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStrip1 = new System.Windows.Forms.ToolStrip();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -94,11 +95,22 @@
       this.форматPNGToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.форматPNGToolStripMenuItem.Text = "Формат PNG";
       // 
+      // toolStrip1
+      // 
+      this.toolStrip1.AutoSize = false;
+      this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+      this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+      this.toolStrip1.Name = "toolStrip1";
+      this.toolStrip1.Size = new System.Drawing.Size(44, 426);
+      this.toolStrip1.TabIndex = 1;
+      this.toolStrip1.Text = "toolStrip1";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.toolStrip1);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "Form1";
@@ -119,6 +131,7 @@
         private System.Windows.Forms.ToolStripMenuItem изображениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem форматToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem форматPNGToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }
 
