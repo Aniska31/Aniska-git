@@ -25,7 +25,7 @@ namespace _1
     private void button1_Click(object sender, EventArgs e)
     {
       // Вывести сообщение с текстом "Вы усердны"
-      MessageBox.Show("Вы усердны!!");
+      MessageBox.Show("Молодца, знал, что ты правильный человек!", "Я в тебя всегда верил", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
       // Завершить приложение
       Application.Exit();
     }
