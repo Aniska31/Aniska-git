@@ -76,6 +76,7 @@
       this.OX.Name = "OX";
       this.OX.Size = new System.Drawing.Size(49, 20);
       this.OX.TabIndex = 3;
+      this.OX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.OX.TextChanged += new System.EventHandler(this.OX_TextChanged);
       // 
       // OY
@@ -84,6 +85,7 @@
       this.OY.Name = "OY";
       this.OY.Size = new System.Drawing.Size(49, 20);
       this.OY.TabIndex = 4;
+      this.OY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       this.OY.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
       // 
       // X

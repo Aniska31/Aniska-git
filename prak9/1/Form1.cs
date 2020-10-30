@@ -17,7 +17,13 @@ namespace _1
       InitializeComponent();
     }
 
-        private void label1_Click(object sender, EventArgs e)
+    Random rnd = new Random();
+    Point tmp_location;
+
+    int _w = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
+    int _h = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height;
+
+    private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -33,9 +39,24 @@ namespace _1
     private void Form1_MouseMove(object sender, MouseEventArgs e)
     {
       // переводим координату X в строку и записывает в поля ввода
-      OX.Text = e.X.ToString();
+     OX.Text = e.X.ToString();
       // переводим координату Y в строку и записывает в поля ввода
-      OY.Text = e.Y.ToString();
+     OY.Text = e.Y.ToString();
+
+      if (e.X > 70 && e.X < 170 && e.Y > 320 && e.Y < 365)
+      {
+        tmp_location = this.Location;
+        tmp_location.X += rnd.Next(-100, 100);
+        tmp_location.Y += rnd.Next(-100, 100);
+
+        if (tmp_location.X < 0 || tmp_location.X > (_w - this.Width / 2) || tmp_location.Y < 0 || tmp_location.Y > (_h - this.Height / 2))
+        {
+          tmp_location.X = _w / 2;
+          tmp_location.Y = _h / 2;
+        }
+
+        this.Location = tmp_location;
+      }
     }
 
     private void Form1_Load(object sender, EventArgs e)
