@@ -24,7 +24,6 @@ namespace _1
 
     private void button1_Click(object sender, EventArgs e)
     {
-
     }
 
     private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -43,6 +42,19 @@ namespace _1
     private void textBox2_TextChanged(object sender, EventArgs e)
     {
 
+    }
+
+    private void OX_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void No_Click(object sender, EventArgs e)
+    {
+      // Вывести сообщение, с текстом "Мы не сомневались в вешем безразличии" второй параметр - заголовок окна сообщения "Внимание"
+      //MessageBoxButtons.OK; - тип размещаемой кнопки на форме сообщения
+      //MessageBoxIcon.Information; - тип сообщения - будет иметь иконку "информация" и соответствующий звуковой сигнал 
+      MessageBox.Show("Я записал тебя в список плохих людей, но пока что только карандашом.", "Ты так не глупи...",MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
   }
 }
