@@ -16,5 +16,10 @@ namespace _2
     {
       InitializeComponent();
     }
-  }
+
+        private void форматToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
