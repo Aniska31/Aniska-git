@@ -17,7 +17,10 @@ namespace _2
       InitializeComponent();
     }
 
-        private void форматToolStripMenuItem_Click(object sender, EventArgs e)
+    Image MemForImage;
+
+    // обработка кнопки меню "загрузка - в формате jpg"
+    private void форматToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -37,19 +40,36 @@ namespace _2
       }
     }
 
+    // обработка кнопки №1 на панели
     private void toolStripButton1_Click(object sender, EventArgs e)
     {
 
     }
 
+    // обработка кнопки меню "загрузка - в формате png"
+    private void форматPNGToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    // обработка кнопки №2 на панели
     private void toolStripButton2_Click(object sender, EventArgs e)
     {
 
     }
 
+    // обработка кнопки №3 на панели
     private void toolStripButton3_Click(object sender, EventArgs e)
     {
 
     }
-  }
-}
+
+    // функция загрузки изображения
+    private void LoadImage(bool jpg)
+    {
+      // директория, которая будет выбрана как начальная в окне для выбора файла openFileDialog1.InitialDirectory = "c:"; если будем выбирать jpg файлы
+      if (jpg)
+      {
+        // устанавливаем формат файлов для загрузки - jpg
+      }
+    }
