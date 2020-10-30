@@ -41,5 +41,15 @@ namespace _2
     {
 
     }
+
+    private void toolStripButton2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void toolStripButton3_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 }

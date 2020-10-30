@@ -40,8 +40,10 @@
       this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
       this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
       this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+      this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.menuStrip1.SuspendLayout();
       this.toolStrip1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -135,6 +137,7 @@
       this.toolStripButton2.Name = "toolStripButton2";
       this.toolStripButton2.Size = new System.Drawing.Size(42, 42);
       this.toolStripButton2.Text = "toolStripButton2";
+      this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
       // 
       // toolStripButton3
       // 
@@ -145,12 +148,23 @@
       this.toolStripButton3.Name = "toolStripButton3";
       this.toolStripButton3.Size = new System.Drawing.Size(42, 44);
       this.toolStripButton3.Text = "toolStripButton3";
+      this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+      // 
+      // pictureBox1
+      // 
+      this.pictureBox1.Location = new System.Drawing.Point(47, 38);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(741, 400);
+      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.pictureBox1.TabIndex = 2;
+      this.pictureBox1.TabStop = false;
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.pictureBox1);
       this.Controls.Add(this.toolStrip1);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
@@ -160,6 +174,7 @@
       this.menuStrip1.PerformLayout();
       this.toolStrip1.ResumeLayout(false);
       this.toolStrip1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -178,6 +193,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
