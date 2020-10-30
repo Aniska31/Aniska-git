@@ -1,6 +1,6 @@
 ﻿namespace _1
 {
-  partial class Form1
+  partial class Best_Form
   {
     /// <summary>
     /// Обязательная переменная конструктора.
@@ -28,25 +28,25 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.label1 = new System.Windows.Forms.Label();
+      this.Question = new System.Windows.Forms.Label();
       this.Yes = new System.Windows.Forms.Button();
       this.No = new System.Windows.Forms.Button();
       this.OX = new System.Windows.Forms.TextBox();
       this.OY = new System.Windows.Forms.TextBox();
-      this.label2 = new System.Windows.Forms.Label();
-      this.label3 = new System.Windows.Forms.Label();
+      this.X = new System.Windows.Forms.Label();
+      this.Y = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
-      // label1
+      // Question
       // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Swis721 BlkOul BT", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(71, 184);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(315, 29);
-      this.label1.TabIndex = 0;
-      this.label1.Text = "Вы хотите попить пивка?";
-      this.label1.Click += new System.EventHandler(this.label1_Click);
+      this.Question.AutoSize = true;
+      this.Question.Font = new System.Drawing.Font("Swis721 BlkOul BT", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Question.Location = new System.Drawing.Point(71, 184);
+      this.Question.Name = "Question";
+      this.Question.Size = new System.Drawing.Size(315, 29);
+      this.Question.TabIndex = 0;
+      this.Question.Text = "Вы хотите попить пивка?";
+      this.Question.Click += new System.EventHandler(this.label1_Click);
       // 
       // Yes
       // 
@@ -55,7 +55,7 @@
       this.Yes.Name = "Yes";
       this.Yes.Size = new System.Drawing.Size(91, 34);
       this.Yes.TabIndex = 1;
-      this.Yes.Text = "Безусловно!";
+      this.Yes.Text = "Безусловно!!!";
       this.Yes.UseVisualStyleBackColor = true;
       this.Yes.Click += new System.EventHandler(this.button1_Click);
       // 
@@ -86,37 +86,37 @@
       this.OY.TabIndex = 4;
       this.OY.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
       // 
-      // label2
+      // X
       // 
-      this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(15, 15);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(17, 13);
-      this.label2.TabIndex = 5;
-      this.label2.Text = "X:";
+      this.X.AutoSize = true;
+      this.X.Location = new System.Drawing.Point(15, 15);
+      this.X.Name = "X";
+      this.X.Size = new System.Drawing.Size(17, 13);
+      this.X.TabIndex = 5;
+      this.X.Text = "X:";
       // 
-      // label3
+      // Y
       // 
-      this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(15, 52);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(17, 13);
-      this.label3.TabIndex = 6;
-      this.label3.Text = "Y:";
+      this.Y.AutoSize = true;
+      this.Y.Location = new System.Drawing.Point(15, 52);
+      this.Y.Name = "Y";
+      this.Y.Size = new System.Drawing.Size(17, 13);
+      this.Y.TabIndex = 6;
+      this.Y.Text = "Y:";
       // 
-      // Form1
+      // Best_Form
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(453, 444);
-      this.Controls.Add(this.label3);
-      this.Controls.Add(this.label2);
+      this.Controls.Add(this.Y);
+      this.Controls.Add(this.X);
       this.Controls.Add(this.OY);
       this.Controls.Add(this.OX);
       this.Controls.Add(this.No);
       this.Controls.Add(this.Yes);
-      this.Controls.Add(this.label1);
-      this.Name = "Form1";
+      this.Controls.Add(this.Question);
+      this.Name = "Best_Form";
       this.Text = "Предложение, от которого нельзя отказаться";
       this.Load += new System.EventHandler(this.Form1_Load);
       this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
@@ -127,13 +127,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Question;
         private System.Windows.Forms.Button Yes;
         private System.Windows.Forms.Button No;
         private System.Windows.Forms.TextBox OX;
         private System.Windows.Forms.TextBox OY;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label X;
+        private System.Windows.Forms.Label Y;
     }
 }
 

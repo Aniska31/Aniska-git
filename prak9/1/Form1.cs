@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _1
 {
-  public partial class Form1 : Form
+  public partial class Best_Form : Form
   {
-    public Form1()
+    public Best_Form()
     {
       InitializeComponent();
     }
@@ -24,6 +24,10 @@ namespace _1
 
     private void button1_Click(object sender, EventArgs e)
     {
+      // Вывести сообщение с текстом "Вы усердны"
+      MessageBox.Show("Вы усердны!!");
+      // Завершить приложение
+      Application.Exit();
     }
 
     private void Form1_MouseMove(object sender, MouseEventArgs e)
