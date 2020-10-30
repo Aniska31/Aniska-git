@@ -43,9 +43,9 @@
       this.Question.Font = new System.Drawing.Font("Swis721 BlkOul BT", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.Question.Location = new System.Drawing.Point(71, 184);
       this.Question.Name = "Question";
-      this.Question.Size = new System.Drawing.Size(315, 29);
+      this.Question.Size = new System.Drawing.Size(324, 29);
       this.Question.TabIndex = 0;
-      this.Question.Text = "Вы хотите попить пивка?";
+      this.Question.Text = "Вы хотите попить пивка?!";
       this.Question.Click += new System.EventHandler(this.label1_Click);
       // 
       // Yes
