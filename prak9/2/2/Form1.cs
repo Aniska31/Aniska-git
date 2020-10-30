@@ -36,5 +36,10 @@ namespace _2
         Application.Exit();
       }
     }
+
+    private void toolStripButton1_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 }
