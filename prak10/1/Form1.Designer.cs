@@ -36,6 +36,7 @@
             this.missedLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.totalLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.accuracyLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@
             this.correctLabel,
             this.missedLabel,
             this.totalLabel,
-            this.accuracyLabel});
+            this.accuracyLabel,
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 109);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(856, 22);
@@ -89,6 +91,14 @@
             this.accuracyLabel.Size = new System.Drawing.Size(78, 17);
             this.accuracyLabel.Text = "Accuracy: 0%";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(572, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Text = "Difficulty";
+            this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,6 +126,7 @@
         private System.Windows.Forms.ToolStripStatusLabel missedLabel;
         private System.Windows.Forms.ToolStripStatusLabel totalLabel;
         private System.Windows.Forms.ToolStripStatusLabel accuracyLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
