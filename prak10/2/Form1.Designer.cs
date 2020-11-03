@@ -178,14 +178,17 @@
             // stop1
             // 
             this.stop1.Interval = 1500;
+            this.stop1.Tick += new System.EventHandler(this.stop1_Tick);
             // 
             // stop2
             // 
             this.stop2.Interval = 2500;
+            this.stop2.Tick += new System.EventHandler(this.stop2_Tick);
             // 
             // stop3
             // 
             this.stop3.Interval = 3500;
+            this.stop3.Tick += new System.EventHandler(this.stop3_Tick);
             // 
             // Form1
             // 
