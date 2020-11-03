@@ -31,5 +31,26 @@ namespace _2
         {
 
         }
+
+        private void dvg1_Tick(object sender, EventArgs e)
+        {
+            Random random = new Random(); //Создаем экземпляр класса Random
+            int dvg = random.Next(8); // Получаем случайное число от 0-7
+            label1.Text = dvg.ToString(); //Выводим полученное число.
+        }
+
+        private void dvg2_Tick(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int dvg = random.Next(8);
+            label2.Text = dvg.ToString();
+        }
+
+        private void dvg3_Tick(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int dvg = random.Next(8);
+            label3.Text = dvg.ToString();
+        }
     }
 }

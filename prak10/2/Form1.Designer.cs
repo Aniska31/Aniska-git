@@ -163,14 +163,17 @@
             // dvg1
             // 
             this.dvg1.Interval = 25;
+            this.dvg1.Tick += new System.EventHandler(this.dvg1_Tick);
             // 
             // dvg2
             // 
             this.dvg2.Interval = 25;
+            this.dvg2.Tick += new System.EventHandler(this.dvg2_Tick);
             // 
             // dvg3
             // 
             this.dvg3.Interval = 25;
+            this.dvg3.Tick += new System.EventHandler(this.dvg3_Tick);
             // 
             // stop1
             // 
