@@ -14,6 +14,8 @@ namespace _1
     {
         //Добавляем экземпляр класса Random, он нам понадобиться для получения слуйчаной буквы.
         Random random = new Random();
+
+        Stats stats = new Stats();
         public Form1()
         {
             InitializeComponent();
