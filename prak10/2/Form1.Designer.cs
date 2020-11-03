@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,6 +38,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.dvg1 = new System.Windows.Forms.Timer(this.components);
+            this.dvg2 = new System.Windows.Forms.Timer(this.components);
+            this.dvg3 = new System.Windows.Forms.Timer(this.components);
+            this.stop1 = new System.Windows.Forms.Timer(this.components);
+            this.stop2 = new System.Windows.Forms.Timer(this.components);
+            this.stop3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,6 +160,30 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Осталось попыток: 0";
             // 
+            // dvg1
+            // 
+            this.dvg1.Interval = 25;
+            // 
+            // dvg2
+            // 
+            this.dvg2.Interval = 25;
+            // 
+            // dvg3
+            // 
+            this.dvg3.Interval = 25;
+            // 
+            // stop1
+            // 
+            this.stop1.Interval = 1500;
+            // 
+            // stop2
+            // 
+            this.stop2.Interval = 2500;
+            // 
+            // stop3
+            // 
+            this.stop3.Interval = 3500;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +219,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer dvg1;
+        private System.Windows.Forms.Timer dvg2;
+        private System.Windows.Forms.Timer dvg3;
+        private System.Windows.Forms.Timer stop1;
+        private System.Windows.Forms.Timer stop2;
+        private System.Windows.Forms.Timer stop3;
     }
 }
 
