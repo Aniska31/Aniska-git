@@ -133,7 +133,15 @@ namespace _2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //активируем таймеры
+            dvg1.Enabled = true;
+            dvg2.Enabled = true;
+            dvg3.Enabled = true;
+            stop1.Enabled = true;
+            stop2.Enabled = true;
+            stop3.Enabled = true;
+            IsActive = true;
+            button1.Enabled = false; //Пока барабаны крутятся кнопка "Погнали!"  заблокирована.
         }
 
         private void button2_Click(object sender, EventArgs e)
