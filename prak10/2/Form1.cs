@@ -121,5 +121,14 @@ namespace _2
             if ((label1.Text == "6" && label2.Text == "6") || (label2.Text == "6" && label3.Text == "6")) Upd_Win_Money(6);
             if ((label1.Text == "7" && label2.Text == "7") || (label2.Text == "7" && label3.Text == "7")) Upd_Win_Money(10);
         }
+
+        private void Init_Counter(decimal counter)
+        {
+            counter_money = Convert.ToInt32(counter);
+            balance = balance - counter_money;
+            label4.Text = "Баланс: $" + balance;
+            counter_try = 5;
+            label6.Text = "Осталось попыток: " + counter_try;
+        }
     }
 }
