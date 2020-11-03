@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // listBox1
@@ -60,6 +62,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
