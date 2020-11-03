@@ -28,13 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 108;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.MultiColumn = true;
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(856, 131);
+            this.listBox1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 131);
+            this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
             this.Name = "Form1";
@@ -44,6 +58,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
