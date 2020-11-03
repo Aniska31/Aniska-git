@@ -32,6 +32,11 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.correctLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.missedLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.totalLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.accuracyLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -48,12 +53,41 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.correctLabel,
+            this.missedLabel,
+            this.totalLabel,
+            this.accuracyLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 109);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(856, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // correctLabel
+            // 
+            this.correctLabel.Name = "correctLabel";
+            this.correctLabel.Size = new System.Drawing.Size(58, 17);
+            this.correctLabel.Text = "Correct: 0";
+            // 
+            // missedLabel
+            // 
+            this.missedLabel.Name = "missedLabel";
+            this.missedLabel.Size = new System.Drawing.Size(56, 17);
+            this.missedLabel.Text = "Missed: 0";
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(46, 17);
+            this.totalLabel.Text = "Total: 0";
+            // 
+            // accuracyLabel
+            // 
+            this.accuracyLabel.Name = "accuracyLabel";
+            this.accuracyLabel.Size = new System.Drawing.Size(78, 17);
+            this.accuracyLabel.Text = "Accuracy: 0%";
             // 
             // Form1
             // 
@@ -66,6 +100,8 @@
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Hit the keys!";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,6 +112,10 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel correctLabel;
+        private System.Windows.Forms.ToolStripStatusLabel missedLabel;
+        private System.Windows.Forms.ToolStripStatusLabel totalLabel;
+        private System.Windows.Forms.ToolStripStatusLabel accuracyLabel;
     }
 }
 
