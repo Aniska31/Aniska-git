@@ -130,5 +130,17 @@ namespace _2
             counter_try = 5;
             label6.Text = "Осталось попыток: " + counter_try;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Init_Counter(numericUpDown1.Value);
+            button1.Enabled = true;
+            button2.Enabled = false;
+        }
     }
 }
