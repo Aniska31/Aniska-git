@@ -1,1 +1,1 @@
-# univer-CSharp-practice
+# just finished practical exercises at seminars
