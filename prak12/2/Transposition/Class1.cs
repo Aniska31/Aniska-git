@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transposition
 {
-    public class Transposition
+    public class Transpositions
     {
         private int[] key = null;
         public void SetKey(int[] _key)
@@ -54,4 +54,6 @@ namespace Transposition
             return result;
         }
     }
+
+
 }
