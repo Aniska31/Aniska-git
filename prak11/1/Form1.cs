@@ -16,9 +16,9 @@ namespace _1
     {
         // строка подключения к MS Access
         // вариант 1
-        public static string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Workers.mdb;";
+        //public static string connectString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Workers.mdb;";
         // вариант 2
-        //public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Workers.mdb;";
+        public static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Workers.mdb;";
 
         // поле - ссылка на экземпляр класса OleDbConnection для соединения с БД
         private OleDbConnection myConnection;
@@ -31,12 +31,12 @@ namespace _1
             myConnection.Open();
         }
 
-        // обработчик события закрытия формы
+        /*// обработчик события закрытия формы
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             // заркываем соединение с БД
             myConnection.Close();
-        }
+        }*/
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -118,9 +118,11 @@ namespace _1
             command.ExecuteNonQuery();
         }
 
+        // обработчик события закрытия формы
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            // заркываем соединение с БД
+            myConnection.Close();
         }
     }
 }
