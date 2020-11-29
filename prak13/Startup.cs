@@ -5,6 +5,7 @@ using prak13.Models;
 
 namespace prak13
 {
+
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
