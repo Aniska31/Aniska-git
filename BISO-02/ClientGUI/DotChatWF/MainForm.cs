@@ -44,7 +44,7 @@ namespace DotChatWF
         private void btnSend_Click(object sender, EventArgs e) {
             if (int_token == 0)
       {
-        MessageBox.Show("Please log in or register");
+        MessageBox.Show("Пожалуйста, пройдите авторизацию или зарегистрируйтесь.","Ошибка при отправлении сообщения", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
       }
       else 
       { 

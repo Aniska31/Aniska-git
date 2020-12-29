@@ -45,7 +45,7 @@
             // 
             this.listMessages.FormattingEnabled = true;
             this.listMessages.Location = new System.Drawing.Point(9, 10);
-            this.listMessages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listMessages.Margin = new System.Windows.Forms.Padding(2);
             this.listMessages.Name = "listMessages";
             this.listMessages.Size = new System.Drawing.Size(583, 277);
             this.listMessages.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.fieldUsername.AutoCompleteCustomSource.AddRange(new string[] {
             "You are not logged in"});
             this.fieldUsername.Location = new System.Drawing.Point(81, 304);
-            this.fieldUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fieldUsername.Margin = new System.Windows.Forms.Padding(2);
             this.fieldUsername.Name = "fieldUsername";
             this.fieldUsername.ReadOnly = true;
             this.fieldUsername.Size = new System.Drawing.Size(267, 20);
@@ -85,7 +85,7 @@
             // fieldMessage
             // 
             this.fieldMessage.Location = new System.Drawing.Point(81, 332);
-            this.fieldMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fieldMessage.Margin = new System.Windows.Forms.Padding(2);
             this.fieldMessage.Multiline = true;
             this.fieldMessage.Name = "fieldMessage";
             this.fieldMessage.Size = new System.Drawing.Size(391, 34);
@@ -94,7 +94,7 @@
             // btnSend
             // 
             this.btnSend.Location = new System.Drawing.Point(483, 304);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(108, 89);
             this.btnSend.TabIndex = 5;
@@ -110,18 +110,18 @@
             // btnAuth
             // 
             this.btnAuth.Location = new System.Drawing.Point(9, 370);
-            this.btnAuth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAuth.Margin = new System.Windows.Forms.Padding(2);
             this.btnAuth.Name = "btnAuth";
             this.btnAuth.Size = new System.Drawing.Size(106, 23);
             this.btnAuth.TabIndex = 6;
-            this.btnAuth.Text = "Аутентификация";
+            this.btnAuth.Text = "Авторизация";
             this.btnAuth.UseVisualStyleBackColor = true;
             this.btnAuth.Click += new System.EventHandler(this.btnAuth_Click);
             // 
             // btnReg
             // 
             this.btnReg.Location = new System.Drawing.Point(131, 370);
-            this.btnReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReg.Margin = new System.Windows.Forms.Padding(2);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(106, 23);
             this.btnReg.TabIndex = 7;
@@ -149,7 +149,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listMessages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Cute Chat :3";
             this.Load += new System.EventHandler(this.MainForm_Load);
