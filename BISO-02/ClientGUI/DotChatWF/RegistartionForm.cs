@@ -29,8 +29,7 @@ namespace DotChatWF
 
     private void RegistartionForm_Load(object sender, EventArgs e)
     {
-
-    }
+        }
 
     private void btnReg2serv_Click(object sender, EventArgs e)
     {
@@ -74,12 +73,11 @@ namespace DotChatWF
 
     private void RegistartionForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-
-    }
+        }
 
     private void RegistartionForm_FormClosed(object sender, FormClosedEventArgs e)
     {
-      mForm.Show();
+          mForm.Show();
       //this.Visible = false;
     }
   }

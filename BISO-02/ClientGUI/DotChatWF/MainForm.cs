@@ -88,9 +88,11 @@ namespace DotChatWF
 
     private void btnAuth_Click(object sender, EventArgs e)
     {
-      AuthForm.Show();
-      this.Visible = false;
-    }
+     
+        AuthForm.mForm = this;
+        AuthForm.Show();
+        this.Visible = false;
+        }
 
     private void MainForm_Load(object sender, EventArgs e)
     {
@@ -117,8 +119,13 @@ namespace DotChatWF
         lastMsgID++;
       }
     }
-  }
-  [Serializable]
+
+        private void listMessages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+    [Serializable]
     public class Message
     {
         public string username = "";

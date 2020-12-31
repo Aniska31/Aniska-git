@@ -49,6 +49,7 @@
             this.listMessages.Name = "listMessages";
             this.listMessages.Size = new System.Drawing.Size(583, 277);
             this.listMessages.TabIndex = 0;
+            this.listMessages.SelectedIndexChanged += new System.EventHandler(this.listMessages_SelectedIndexChanged);
             // 
             // label1
             // 
