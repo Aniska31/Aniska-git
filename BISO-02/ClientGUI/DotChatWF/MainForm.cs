@@ -21,10 +21,11 @@ namespace DotChatWF
         int lastMsgID = 0;
         AuthentificationForm AuthForm;
         RegistartionForm RegForm;
+        Smiles SmileForm;
         public TextBox TextBox_username;
+        public TextBox TextBox_text;
         public int int_token;
         public Message messages;
-
 
 
         public MainForm()
@@ -99,6 +100,7 @@ namespace DotChatWF
       int_token = 0;
       AuthForm = new AuthentificationForm();
       RegForm = new RegistartionForm();
+      SmileForm = new Smiles();
       TextBox_username = fieldUsername;
 
     }
@@ -123,6 +125,15 @@ namespace DotChatWF
         private void listMessages_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TextBox_text = fieldMessage;
+            SmileForm.mForm = this;
+            SmileForm.Show();
+            fieldMessage = TextBox_text;
+            //this.Visible = false;
         }
     }
     [Serializable]

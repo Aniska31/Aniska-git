@@ -29,7 +29,7 @@ namespace DotChatWF
 
     private void RegistartionForm_Load(object sender, EventArgs e)
     {
-        }
+    }
 
     private void btnReg2serv_Click(object sender, EventArgs e)
     {

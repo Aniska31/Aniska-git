@@ -39,6 +39,7 @@
             this.btnAuth = new System.Windows.Forms.Button();
             this.btnReg = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listMessages
@@ -136,11 +137,22 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(403, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Смайлики";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 402);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.btnAuth);
             this.Controls.Add(this.btnSend);
@@ -152,6 +164,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cute Chat :3";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
@@ -171,6 +184,7 @@
     private System.Windows.Forms.Button btnAuth;
     private System.Windows.Forms.Button btnReg;
     private System.Windows.Forms.Timer timer1;
-  }
+        private System.Windows.Forms.Button button1;
+    }
 }
 

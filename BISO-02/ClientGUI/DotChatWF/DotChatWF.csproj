@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Smiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Smiles.Designer.cs">
+      <DependentUpon>Smiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistartionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AuthentificationForm.resx">
       <DependentUpon>AuthentificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Smiles.resx">
+      <DependentUpon>Smiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
