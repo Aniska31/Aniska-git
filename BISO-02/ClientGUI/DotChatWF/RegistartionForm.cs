@@ -56,18 +56,19 @@ namespace DotChatWF
         {
           mForm.int_token = int_token;
           mForm.TextBox_username.Text = auth_data.login;
-          mForm.Show();
+        MessageBox.Show("Вы зарегистрировались. Приятного общения :)", "Cute chat :3", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        mForm.Show();
           this.Visible = false;
         }
         else
         {
-          MessageBox.Show("Такой пользователь уже зарегистрирован, обратитесь к администратору");
+          MessageBox.Show("Такой пользователь уже зарегистрирован, обратитесь к администратору","Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
       }
-        else
-      {
-        MessageBox.Show("Пароли не совпадают, введите заново.");
-      }
+    else
+    {
+    MessageBox.Show("Пароли не совпадают, введите заново.","Ошибка при регистрации", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+    }
 
     }
 
