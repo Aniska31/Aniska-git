@@ -73,5 +73,25 @@ namespace DotChatWF
             mForm.Show();
             this.Visible = false;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string sm = mForm.TextBox_text.Text;
+            string ch = "💕";
+            sm = sm + ch;
+            mForm.TextBox_text.Text = sm;
+            mForm.Show();
+            this.Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string sm = mForm.TextBox_text.Text;
+            string ch = "🍒";
+            sm = sm + ch;
+            mForm.TextBox_text.Text = sm;
+            mForm.Show();
+            this.Visible = false;
+        }
     }
 }

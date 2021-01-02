@@ -38,7 +38,6 @@
             this.updateLoop = new System.Windows.Forms.Timer(this.components);
             this.btnAuth = new System.Windows.Forms.Button();
             this.btnReg = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -106,6 +105,7 @@
             // 
             // updateLoop
             // 
+            this.updateLoop.Enabled = true;
             this.updateLoop.Interval = 1000;
             this.updateLoop.Tick += new System.EventHandler(this.updateLoop_Tick);
             // 
@@ -130,12 +130,6 @@
             this.btnReg.Text = "Регистрация";
             this.btnReg.UseVisualStyleBackColor = true;
             this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button1
             // 
@@ -183,7 +177,6 @@
         private System.Windows.Forms.Timer updateLoop;
     private System.Windows.Forms.Button btnAuth;
     private System.Windows.Forms.Button btnReg;
-    private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
     }
 }

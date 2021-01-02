@@ -26,42 +26,6 @@ namespace DotChatWF
         }
     }
 
-    /*public class IMainFunction
-    {
-        /// <summary>
-        /// Преобразует объект в Json
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static string ToJson(object value) =>
-            System.Text.Json.JsonSerializer.Serialize(value, new JsonSerializerOptions() { WriteIndented = true });
-
-        /// <summary>
-        /// Преобразует из Json в объект <typeparamref name="T"/>
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static T FromJson<T>(string value) =>
-            System.Text.Json.JsonSerializer.Deserialize<T>(value, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
-
-        /// <summary>
-        /// Преобразует объект в Json и сохраняет в файл
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="value"></param>
-        public static void ToJsonFile(string path, object value) =>
-            File.WriteAllText(Path.Combine(Directory.GetCurrentDirectory(), path), ToJson(value));
-
-        /// <summary>
-        /// Считывает из файла json и преобразует в объект <typeparamref name="T"/>
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="path"></param>
-        /// <returns></returns>
-        public static T FromJsonFile<T>(string path) =>
-            FromJson<T>(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), path)));
-    }*/
     public partial class MainForm : Form
     {
 
@@ -165,28 +129,19 @@ namespace DotChatWF
                 {
                     _Width = 622,//622
                     _Height = 441,//441
-                    _Update_rate = 5000//1000
+                    _Update_rate = 1000//1000
                 };
                 IMainFunction.ToJsonFile("config.json", config);
             }
             Width = config._Width;
             Height = config._Height;
+            updateLoop.Interval = config._Update_rate;
         }
         private void btnReg_Click(object sender, EventArgs e)
     {
       RegForm.mForm = this;
       RegForm.Show();
       this.Visible = false;
-    }
-
-    private void timer1_Tick(object sender, EventArgs e)
-    {
-      Message msg = GetMessage(lastMsgID);
-      if (msg != null)
-      {
-        listMessages.Items.Add($"[{msg.username}] {msg.text}");
-        lastMsgID++;
-      }
     }
 
         private void listMessages_SelectedIndexChanged(object sender, EventArgs e)
@@ -201,6 +156,16 @@ namespace DotChatWF
             SmileForm.Show();
             fieldMessage = TextBox_text;
             //this.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Message msg = GetMessage(lastMsgID);
+            if (msg != null)
+            {
+                listMessages.Items.Add($"[{msg.username}] {msg.text}");
+                lastMsgID++;
+            }
         }
     }
     [Serializable]
