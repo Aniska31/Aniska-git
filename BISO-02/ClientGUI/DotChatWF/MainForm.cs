@@ -54,7 +54,8 @@ namespace DotChatWF
                 text = fieldMessage.Text,
             });
       }
-    }
+         fieldMessage.Text = "";
+        }
 
         // Отправляет сообщение на сервер
         void SendMessage(Message msg)
