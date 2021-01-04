@@ -19,6 +19,7 @@ namespace DotChatWF
         public int _Update_rate { get; set; }
         public int _Height { get; set; }
         public int _Width { get; set; }
+        public int _Port
 
         public override string ToString()
         {

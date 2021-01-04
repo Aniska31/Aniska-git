@@ -14,8 +14,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Server
 {
+
     public class Startup
     {
+        public static Config config;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,7 +29,26 @@ namespace Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            try
+            {
+                config = IMainFunction.FromJsonFile<Config>("config.json");
+
+            }
+            catch
+            {
+                config = new Config()
+                {
+                    _port = "http://localhost:5000"
+                };
+            }
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsApi",
+                builder => builder.WithOrigins(config._port)
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
