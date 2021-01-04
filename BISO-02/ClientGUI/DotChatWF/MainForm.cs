@@ -36,6 +36,7 @@ namespace DotChatWF
         int lastMsgID = 0;
         AuthentificationForm AuthForm;
         RegistartionForm RegForm;
+        Port PForm;
         Smiles SmileForm;
         public TextBox TextBox_username;
         public TextBox TextBox_text;
@@ -138,6 +139,7 @@ namespace DotChatWF
             AuthForm = new AuthentificationForm();
             RegForm = new RegistartionForm();
             SmileForm = new Smiles();
+            PForm = new Port();
             TextBox_username = fieldUsername;
             try
             {
@@ -182,7 +184,9 @@ namespace DotChatWF
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            PForm.mForm = this;
+            PForm.Show();
+            this.Visible = false;
         }
     }
     [Serializable]

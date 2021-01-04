@@ -96,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMainFunction.cs" />
+    <Compile Include="Port.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Port.Designer.cs">
+      <DependentUpon>Port.cs</DependentUpon>
+    </Compile>
     <Compile Include="Smiles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AuthentificationForm.resx">
       <DependentUpon>AuthentificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Port.resx">
+      <DependentUpon>Port.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Smiles.resx">
       <DependentUpon>Smiles.cs</DependentUpon>
