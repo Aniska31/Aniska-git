@@ -127,7 +127,7 @@ namespace DotChatWF
 
     private void btnAuth_Click(object sender, EventArgs e)
     {
-     
+        AuthForm = new AuthentificationForm();
         AuthForm.mForm = this;
         AuthForm.Show();
         this.Visible = false;
@@ -136,10 +136,10 @@ namespace DotChatWF
         private void MainForm_Load(object sender, EventArgs e)
         {
             int_token = 0;
-            AuthForm = new AuthentificationForm();
+            /*AuthForm = new AuthentificationForm();
             RegForm = new RegistartionForm();
             SmileForm = new Smiles();
-            PForm = new Port();
+            PForm = new Port();*/
             TextBox_username = fieldUsername;
             try
             {
@@ -162,8 +162,9 @@ namespace DotChatWF
             updateLoop.Interval = config._Update_rate;
         }
         private void btnReg_Click(object sender, EventArgs e)
-    {
-      RegForm.mForm = this;
+{
+    RegForm = new RegistartionForm();
+    RegForm.mForm = this;
       RegForm.Show();
       this.Visible = false;
     }
@@ -176,6 +177,7 @@ namespace DotChatWF
         private void button1_Click(object sender, EventArgs e)
         {
             TextBox_text = fieldMessage;
+            SmileForm = new Smiles();
             SmileForm.mForm = this;
             SmileForm.Show();
             fieldMessage = TextBox_text;
@@ -184,6 +186,7 @@ namespace DotChatWF
 
         private void button2_Click(object sender, EventArgs e)
         {
+            PForm = new Port();
             PForm.mForm = this;
             PForm.Show();
             this.Visible = false;
