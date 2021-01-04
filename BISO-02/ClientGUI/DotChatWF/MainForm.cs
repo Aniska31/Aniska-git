@@ -51,8 +51,26 @@ namespace DotChatWF
         private void updateLoop_Tick(object sender, EventArgs e)
         {
             Message msg = GetMessage(lastMsgID);
-            if (msg != null) {
-                listMessages.Items.Add($"[{msg.username}] {msg.text}");
+            if (msg != null) 
+            {
+                int count = msg.text.Length; ;//90 в строке
+                int sum = (int)Math.Ceiling((double)count / 90);
+                string[] sms = new string[sum];
+                if (sum == 1)
+                    sms[0] = msg.text.Substring(0);
+                else
+                {
+                    for (int i = 0; i < sum - 1; i++)
+                    {
+                        sms[i] = msg.text.Substring(90 * i, 90);
+                    }
+                    sms[sum - 1] = msg.text.Substring(90 * (sum - 1));
+                }
+                listMessages.Items.Add($"[{msg.username}] {sms[0]}");
+                for(int i=1;i<sum;i++)
+                {
+                    listMessages.Items.Add($"{sms[i]}");
+                }
                 lastMsgID++;
             }
         }
@@ -146,7 +164,7 @@ namespace DotChatWF
 
         private void listMessages_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -158,15 +176,6 @@ namespace DotChatWF
             //this.Visible = false;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Message msg = GetMessage(lastMsgID);
-            if (msg != null)
-            {
-                listMessages.Items.Add($"[{msg.username}] {msg.text}");
-                lastMsgID++;
-            }
-        }
     }
     [Serializable]
     public class Message
