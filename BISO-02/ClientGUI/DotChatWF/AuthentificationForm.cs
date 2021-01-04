@@ -15,7 +15,8 @@ namespace DotChatWF
 {
   public partial class AuthentificationForm : Form
   {
-    public class AuthData
+        public static Config config;
+        public class AuthData
     {
         public string login { get; set; }
         public string password { get; set; }
@@ -29,13 +30,27 @@ namespace DotChatWF
 
     private void AuthentificationForm_Load(object sender, EventArgs e)
     {
+            try
+            {
+                config = IMainFunction.FromJsonFile<Config>("config.json");
+
+            }
+            catch
+            {
+                config = new Config()
+                {
+                    _Port = "5000"//5000
+                };
+                IMainFunction.ToJsonFile("config.json", config);
+            }
         }
 
     
 
      private void button1_Click(object sender, EventArgs e)
     {
-            WebRequest req = WebRequest.Create("http://localhost:5000/api/auth");
+            WebRequest req = WebRequest.Create("http://localhost:"+config._Port+"/api/auth");
+            //WebRequest req = WebRequest.Create("http://localhost:5000/api/auth");
             req.Method = "POST";
             AuthData auth_data = new AuthData();
             auth_data.login = textBox1.Text;

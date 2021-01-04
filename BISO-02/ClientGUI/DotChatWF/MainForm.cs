@@ -19,7 +19,7 @@ namespace DotChatWF
         public int _Update_rate { get; set; }
         public int _Height { get; set; }
         public int _Width { get; set; }
-        public int _Port
+        public string _Port { get; set; }
 
         public override string ToString()
         {
@@ -94,7 +94,8 @@ namespace DotChatWF
         // Отправляет сообщение на сервер
         void SendMessage(Message msg)
         {
-            WebRequest req = WebRequest.Create("http://localhost:5000/api/chat");
+            WebRequest req = WebRequest.Create("http://localhost:" + config._Port + "/api/chat");
+            //WebRequest req = WebRequest.Create("http://localhost:5000/api/chat");
             req.Method = "POST";
             string postData = JsonConvert.SerializeObject(msg);
             //byte[] bytes = Encoding.UTF8.GetBytes(postData);
@@ -111,7 +112,8 @@ namespace DotChatWF
         {
             try
             {
-                WebRequest req = WebRequest.Create($"http://localhost:5000/api/chat/{id}");
+                WebRequest req = WebRequest.Create("http://localhost:"+config._Port+$"/api/chat/{id}");
+                //WebRequest req = WebRequest.Create($"http://localhost:5000/api/chat/{id}");
                 WebResponse resp = req.GetResponse();
                 string smsg = new StreamReader(resp.GetResponseStream()).ReadToEnd();
 
@@ -148,7 +150,8 @@ namespace DotChatWF
                 {
                     _Width = 622,//622
                     _Height = 441,//441
-                    _Update_rate = 1000//1000
+                    _Update_rate = 1000,//1000
+                    _Port = "5000"//5000
                 };
                 IMainFunction.ToJsonFile("config.json", config);
             }
@@ -177,6 +180,10 @@ namespace DotChatWF
             //this.Visible = false;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     [Serializable]
     public class Message

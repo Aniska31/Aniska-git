@@ -8,20 +8,23 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DotChatWF
 {
-  public partial class RegistartionForm : Form
+    public partial class RegistartionForm : Form
   {
-    public class AuthData
+        public static Config config;
+        public class AuthData
     {
       public string login { get; set; }
       public string password { get; set; }
     }
+    
 
-    public MainForm mForm; 
+        public MainForm mForm; 
     public RegistartionForm()
     {
       InitializeComponent();
@@ -29,7 +32,20 @@ namespace DotChatWF
 
     private void RegistartionForm_Load(object sender, EventArgs e)
     {
-    }
+            try
+            {
+                config = IMainFunction.FromJsonFile<Config>("config.json");
+
+            }
+            catch
+            {
+                config = new Config()
+                {
+                    _Port = "5000"//5000
+                };
+                IMainFunction.ToJsonFile("config.json", config);
+            }
+        }
 
     private void btnReg2serv_Click(object sender, EventArgs e)
     {
@@ -37,7 +53,8 @@ namespace DotChatWF
         string pass2 = TBPass2.Text;
       if (pass1 == pass2)
       {
-        WebRequest req = WebRequest.Create("http://localhost:5000/api/reg");
+        WebRequest req = WebRequest.Create("http://localhost:"+config._Port+"/api/reg");
+        //WebRequest req = WebRequest.Create("http://localhost:5000/api/reg");
         req.Method = "POST";
         AuthData auth_data = new AuthData();
         auth_data.login = fieldUserName.Text;
