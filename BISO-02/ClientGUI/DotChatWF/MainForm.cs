@@ -14,6 +14,7 @@ using System.Text.Json;
 
 namespace DotChatWF
 {
+
     public struct Config
     {
         public int _Update_rate { get; set; }
@@ -43,6 +44,7 @@ namespace DotChatWF
         public int int_token;
         public Message messages;
         public static Config config;
+
 
 
         public MainForm()

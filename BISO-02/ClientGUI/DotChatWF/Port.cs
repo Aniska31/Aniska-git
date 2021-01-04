@@ -12,8 +12,8 @@ namespace DotChatWF
 {
     public partial class Port : Form
     {
-        public static Config config;
         public MainForm mForm;
+        public static Config config;
         public Port()
         {
             InitializeComponent();
@@ -26,8 +26,10 @@ namespace DotChatWF
 
         private void button1_Click(object sender, EventArgs e)
         {
+            config = IMainFunction.FromJsonFile<Config>("config.json");
             config._Port = textBox1.Text;
-            MessageBox.Show("Вы поменяли порт.", "Cute chat :3", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            IMainFunction.ToJsonFile("config.json", config);
+            MessageBox.Show("Вы поменяли порт.", "Изменение порта", MessageBoxButtons.OK, MessageBoxIcon.Information);
             mForm.Show();
             this.Visible = false;
         }
