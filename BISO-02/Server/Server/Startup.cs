@@ -80,7 +80,8 @@ namespace Server
       protected void OnApplicationStopping()
       {
         Program.Sessions.SaveToFile();
-      }
+        Program.ms.SaveToFile();
+        }
 
       protected void OnApplicationStopped()
       {

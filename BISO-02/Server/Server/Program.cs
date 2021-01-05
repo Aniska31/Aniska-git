@@ -51,8 +51,9 @@ namespace Server
                 Sessions = new SessionsClass(); // хранение токенов логинов и паролей
                                                 //Sessions.addValera();
                 Sessions.LoadFromFile();
-                // Console.WriteLine(Sessions.list_tokens.Count);
-                CreateHostBuilder(args).Build().Run();
+                ms.LoadFromFile();
+            // Console.WriteLine(Sessions.list_tokens.Count);
+            CreateHostBuilder(args).Build().Run();
         }
 
             public static IHostBuilder CreateHostBuilder(string[] args) =>

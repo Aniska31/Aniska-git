@@ -35,56 +35,110 @@ namespace Server
     }
   }
 
-  [Serializable]
-  public class MessagesClass
-  {
-    public List<message> messages = new List<message>();
-
-    public void Add(message ms)
+    [Serializable]
+    public class MessagesClass
     {
-      ms.timestamp = DateTime.UtcNow;
-      messages.Add(ms);
-      Console.WriteLine(messages.Count);
+        public List<message> messages = new List<message>();
+
+        public void Add(message ms)
+        {
+            ms.timestamp = DateTime.UtcNow;
+            messages.Add(ms);
+            Console.WriteLine(messages.Count);
+        }
+
+        public void Add(string username, string text)
+        {
+            message msg = new message(username, text);
+            messages.Add(msg);
+            Console.WriteLine(messages.Count);
+        }
+        public void Add(string username)
+        {
+            message msg = new message(username);
+            messages.Add(msg);
+        }
+
+        public message Get(int id)
+        {
+            return messages.ElementAt(id);
+        }
+
+
+        public int GetCountMessages()
+        {
+            return messages.Count;
+        }
+
+
+        public MessagesClass()
+        {
+            messages.Clear();
+            message ms = new message();
+            messages.Add(ms);
+        }
+
+        public void Del(int id)
+        {
+            messages.Remove(Get(id));
+        }
+
+        public void SaveToFile(string filename = "history.json")
+        {
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
+            }
+
+            try
+            {
+                string Data = JsonConvert.SerializeObject(Program.ms);
+
+                using (StreamWriter sw = new StreamWriter(filename, false, System.Text.Encoding.Default))
+                {
+                    sw.WriteLine(Data);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
+        public void LoadFromFile(string filename = "history.json")
+        {
+            long size = 0;
+            if (File.Exists(filename))
+            {
+                System.IO.FileInfo file = new System.IO.FileInfo(filename);
+                size = file.Length;
+            }
+            if (size > 0)
+            {
+                try
+                {
+                    //Console.WriteLine("Dannie vigruzheni");
+                    string json = "";
+                    using (StreamReader sr = new StreamReader(filename, System.Text.Encoding.Default))
+                    {
+                        json = sr.ReadToEnd();
+                    }
+                    Program.ms = JsonConvert.DeserializeObject<MessagesClass>(json);
+                    /*for (int i = 0; i < messages.Count; i++)
+                    {
+                        messages[i].message = null;
+                    }*/
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                // Console.WriteLine($"Загружено записей: {this.list_tokens.Count}");
+            }
+
+        }
     }
-
-    public void Add(string username, string text)
-    {
-      message msg = new message(username, text);
-      messages.Add(msg);
-      Console.WriteLine(messages.Count);
-    }
-	public void Add(string username)
-	{
-		message msg= new message(username);
-		messages.Add(msg);
-	}
-
-    public message Get(int id)
-    {
-      return messages.ElementAt(id);
-    }
-
-
-    public int GetCountMessages()
-    {
-      return messages.Count;
-    }
-
-
-    public MessagesClass()
-    {
-      messages.Clear();
-      message ms = new message();
-      messages.Add(ms);
-    }
-
-    public void Del(int id)
-    {
-       messages.Remove(Get(id));
-    }
-
-  }
-
   public class tokens
   {
     public int token { get; set; }
