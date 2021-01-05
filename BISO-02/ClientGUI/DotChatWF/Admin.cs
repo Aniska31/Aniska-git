@@ -62,7 +62,8 @@ namespace DotChatWF
                 StreamReader sr = new StreamReader(resp.GetResponseStream(), Encoding.GetEncoding("utf-8"));
                 string content = sr.ReadToEnd();
                 sr.Close();
-                mForm.lastMsgID--;
+                mForm.copyID = mForm.lastMsgID;
+                mForm.lastMsgID = -1;
                 MessageBox.Show("Сообщение успешно удалено!", "Cute chat :3", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 

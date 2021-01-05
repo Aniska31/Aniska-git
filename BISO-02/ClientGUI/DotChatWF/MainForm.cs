@@ -35,6 +35,7 @@ namespace DotChatWF
         // Глобальные переменные
         
         public int lastMsgID = 0;
+        public int copyID;
         AuthentificationForm AuthForm;
         RegistartionForm RegForm;
         Port PForm;
@@ -55,28 +56,61 @@ namespace DotChatWF
 
         private void updateLoop_Tick(object sender, EventArgs e)
         {
-            Message msg = GetMessage(lastMsgID);
-            if (msg != null) 
+            if (lastMsgID == -1)
             {
-                int count = msg.text.Length; ;//90 в строке
-                int sum = (int)Math.Ceiling((double)count / 90);
-                string[] sms = new string[sum];
-                if (sum == 1)
-                    sms[0] = msg.text.Substring(0);
-                else
+                listMessages.Items.Clear();
+                for(lastMsgID=0;lastMsgID<copyID;lastMsgID++)
                 {
-                    for (int i = 0; i < sum - 1; i++)
+                    Message msg = GetMessage(lastMsgID);
+                    if (msg != null)
                     {
-                        sms[i] = msg.text.Substring(90 * i, 90);
+                        int count = msg.text.Length; ;//90 в строке
+                        int sum = (int)Math.Ceiling((double)count / 90);
+                        string[] sms = new string[sum];
+                        if (sum == 1)
+                            sms[0] = msg.text.Substring(0);
+                        else
+                        {
+                            for (int i = 0; i < sum - 1; i++)
+                            {
+                                sms[i] = msg.text.Substring(90 * i, 90);
+                            }
+                            sms[sum - 1] = msg.text.Substring(90 * (sum - 1));
+                        }
+                        listMessages.Items.Add($"|{lastMsgID}|[{msg.username}] {sms[0]}");
+                        for (int i = 1; i < sum; i++)
+                        {
+                            listMessages.Items.Add($"{sms[i]}");
+                        }
                     }
-                    sms[sum - 1] = msg.text.Substring(90 * (sum - 1));
                 }
-                listMessages.Items.Add($"|{lastMsgID}|[{msg.username}] {sms[0]}");
-                for(int i=1;i<sum;i++)
+                //lastMsgID++;
+            }
+            else
+            {
+                Message msg = GetMessage(lastMsgID);
+                if (msg != null)
                 {
-                    listMessages.Items.Add($"{sms[i]}");
+                    int count = msg.text.Length; ;//90 в строке
+                    int sum = (int)Math.Ceiling((double)count / 90);
+                    string[] sms = new string[sum];
+                    if (sum == 1)
+                        sms[0] = msg.text.Substring(0);
+                    else
+                    {
+                        for (int i = 0; i < sum - 1; i++)
+                        {
+                            sms[i] = msg.text.Substring(90 * i, 90);
+                        }
+                        sms[sum - 1] = msg.text.Substring(90 * (sum - 1));
+                    }
+                    listMessages.Items.Add($"|{lastMsgID}|[{msg.username}] {sms[0]}");
+                    for (int i = 1; i < sum; i++)
+                    {
+                        listMessages.Items.Add($"{sms[i]}");
+                    }
+                    lastMsgID++;
                 }
-                lastMsgID++;
             }
         }
 
