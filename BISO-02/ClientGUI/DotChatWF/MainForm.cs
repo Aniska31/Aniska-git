@@ -34,11 +34,12 @@ namespace DotChatWF
         
         // Глобальные переменные
         
-        int lastMsgID = 0;
+        public int lastMsgID = 0;
         AuthentificationForm AuthForm;
         RegistartionForm RegForm;
         Port PForm;
         Smiles SmileForm;
+        Admin AForm;
         public TextBox TextBox_username;
         public TextBox TextBox_text;
         public int int_token;
@@ -204,6 +205,20 @@ namespace DotChatWF
                 ms.username = "Объявление";
                 ms.text = $"{TextBox_username.Text} вышел из сети.";
                 SendMessage(ms);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (TextBox_username.Text == "Вы не авторизованы")
+            {
+                MessageBox.Show("Для начала Вы должны быть авторизованы.", "Ошибка при получении прав администратора", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                AForm = new Admin();
+                AForm.mForm = this;
+                AForm.Show();
             }
         }
     }
