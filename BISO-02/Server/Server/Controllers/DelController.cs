@@ -16,11 +16,8 @@ namespace Server.Controllers
         [HttpPost]
         public void Post([FromBody] int id)
         {
-            Console.WriteLine("ыыЫыыЫыы");
-			Console.WriteLine(Program.ms.GetCountMessages());
             Program.ms.Del(id);
             Console.WriteLine($"{id} сообщение было удалено.");
-			Console.WriteLine(Program.ms.GetCountMessages());
         }
     }
 }

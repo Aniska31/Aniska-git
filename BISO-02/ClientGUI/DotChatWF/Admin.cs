@@ -17,7 +17,7 @@ namespace DotChatWF
     {
         public MainForm mForm;
         public static Config config;
-        public string secret = "1";
+        public string secret = "Поставьте 5";
         public Admin()
         {
             InitializeComponent();

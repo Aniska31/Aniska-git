@@ -26,7 +26,7 @@ namespace Server.Controllers
         Console.WriteLine(Program.ms.GetCountMessages());
        Program.ms.Del(id);
         Console.WriteLine($"{id} сообщение было удалено.");
-        Console.WriteLine(Program.ms.GetCountMessages());*/
-    }
+        Console.WriteLine(Program.ms.GetCountMessages());
+        }*/
     }
 }

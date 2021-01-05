@@ -84,7 +84,7 @@ namespace DotChatWF
                         }
                     }
                 }
-                //lastMsgID++;
+                lastMsgID--;
             }
             else
             {
