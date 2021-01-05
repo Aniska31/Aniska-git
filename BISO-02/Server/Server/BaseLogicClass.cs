@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,12 @@ namespace Server
       this.text = text;
       this.timestamp = DateTime.UtcNow;
     }
+    public message(string username)
+    {
+        this.username = "Объявление";
+        this.text = $"{username} зашел в сеть.";
+        this.timestamp = DateTime.UtcNow;
+    }
   }
 
   [Serializable]
@@ -46,6 +53,11 @@ namespace Server
       messages.Add(msg);
       Console.WriteLine(messages.Count);
     }
+	public void Add(string username)
+	{
+		message msg= new message(username);
+		messages.Add(msg);
+	}
 
     public message Get(int id)
     {
@@ -129,6 +141,7 @@ namespace Server
             list_tokens[row_num].token = token;
             //list_tokens.Add(record_token);
             Console.WriteLine($"Аутификация успешно login: {login} password: {password} token: {token}");
+            Program.ms.Add(login);
             return token;
           }
           else
@@ -161,6 +174,7 @@ namespace Server
         tokens record_token = new tokens(token, auth_data.login, auth_data.password);
         list_tokens.Add(record_token);
         Console.WriteLine($"Регистрация успешно login: {auth_data.login} password: {auth_data.password} token: {token}");
+        Program.ms.Add(auth_data.login);
         return token;
       }
       return -1;

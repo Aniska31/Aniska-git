@@ -70,7 +70,7 @@ namespace DotChatWF
                     }
                     sms[sum - 1] = msg.text.Substring(90 * (sum - 1));
                 }
-                listMessages.Items.Add($"[{msg.username}] {sms[0]}");
+                listMessages.Items.Add($"|{lastMsgID}|[{msg.username}] {sms[0]}");
                 for(int i=1;i<sum;i++)
                 {
                     listMessages.Items.Add($"{sms[i]}");
@@ -95,7 +95,7 @@ namespace DotChatWF
         }
 
         // Отправляет сообщение на сервер
-        void SendMessage(Message msg)
+        public void SendMessage(Message msg)
         {
             config = IMainFunction.FromJsonFile<Config>("config.json");
             WebRequest req = WebRequest.Create("http://localhost:" + config._Port + "/api/chat");
@@ -194,6 +194,17 @@ namespace DotChatWF
             PForm.mForm = this;
             PForm.Show();
             this.Visible = false;
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (TextBox_username.Text != "Вы не авторизованы")
+            {
+                Message ms = new Message();
+                ms.username = "Объявление";
+                ms.text = $"{TextBox_username.Text} вышел из сети.";
+                SendMessage(ms);
+            }
         }
     }
     [Serializable]

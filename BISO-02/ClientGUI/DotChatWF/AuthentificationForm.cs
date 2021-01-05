@@ -68,7 +68,7 @@ namespace DotChatWF
             if ((int_token != -1)&& (int_token != -2)&& (int_token != -200))
             {
                 mForm.int_token = int_token;
-                mForm.TextBox_username.Text = auth_data.login;
+                mForm.TextBox_username.Text = auth_data.login;;
                 MessageBox.Show("Вы авторизовались. Приятного общения :)", "Cute chat :3", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mForm.Show();
                 this.Visible = false;
