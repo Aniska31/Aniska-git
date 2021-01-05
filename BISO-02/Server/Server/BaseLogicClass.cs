@@ -78,6 +78,11 @@ namespace Server
       messages.Add(ms);
     }
 
+    public void Del(int id)
+    {
+       messages.Remove(Get(id));
+    }
+
   }
 
   public class tokens

@@ -14,10 +14,19 @@ namespace Server.Controllers
   {
     // POST api/<RegController>
     [HttpPost]
-    public int Post([FromBody] AuthData auth_data)
-    {
-      int int_token = Program.Sessions.registration(auth_data);
-      return int_token;
+        public int Post([FromBody] AuthData auth_data)
+        {
+          int int_token = Program.Sessions.registration(auth_data);
+          return int_token;
+        }
+    /*public void Post([FromBody] int id)
+    //public void Post()
+        {
+        Console.WriteLine("ыыЫыыЫыы");
+        Console.WriteLine(Program.ms.GetCountMessages());
+       Program.ms.Del(id);
+        Console.WriteLine($"{id} сообщение было удалено.");
+        Console.WriteLine(Program.ms.GetCountMessages());*/
     }
-  }
+    }
 }

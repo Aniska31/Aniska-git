@@ -38,7 +38,5 @@ namespace Server.Controllers
             Program.ms.Add(msg);
             Console.WriteLine($"{msg.username}:  {msg.text} ({Program.ms.messages.Count})");
         }
-
-
     }
 }
