@@ -97,6 +97,7 @@ namespace DotChatWF
         // Отправляет сообщение на сервер
         void SendMessage(Message msg)
         {
+            config = IMainFunction.FromJsonFile<Config>("config.json");
             WebRequest req = WebRequest.Create("http://localhost:" + config._Port + "/api/chat");
             //WebRequest req = WebRequest.Create("http://localhost:5000/api/chat");
             req.Method = "POST";
@@ -113,6 +114,7 @@ namespace DotChatWF
         // Получает сообщение с сервера
         Message GetMessage(int id)
         {
+            config = IMainFunction.FromJsonFile<Config>("config.json");
             try
             {
                 WebRequest req = WebRequest.Create("http://localhost:"+config._Port+$"/api/chat/{id}");
