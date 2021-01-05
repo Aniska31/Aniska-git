@@ -32,6 +32,7 @@ namespace DotChatWF
             MessageBox.Show("Вы поменяли порт.", "Изменение порта", MessageBoxButtons.OK, MessageBoxIcon.Information);
             mForm.Show();
             this.Visible = false;
+            Application.Restart();
         }
         private void Port_FormClosing(object sender, FormClosingEventArgs e)
         {
